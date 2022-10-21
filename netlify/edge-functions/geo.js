@@ -20,10 +20,12 @@ export default async (request, context) => {
   }
 
   const KEY = "NIKCwrVKhdKic8e";
+  context.log("fetching geo data for", realIp);
   const response = await fetch(
     `https://pro.ip-api.com/json/${realIp}?key=${KEY}`
   );
   const ipData = await response.json();
+  context.log("geo data", ipData);
 
   const countryCode = ipData?.countryCode;
   context.cookies.set({
