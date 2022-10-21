@@ -1,0 +1,4 @@
+[[edge-functions]]
+path = "/*"
+function = "geo"
+
